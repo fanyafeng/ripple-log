@@ -1,0 +1,11 @@
+before_install:
+  - ./custom_setup.sh
+  - sdk install 11.0.7.hs-adpt
+  - sdk use 11.0.7.hs-adpt
+install:
+  - echo "Running a custom install command"
+  - ./gradlew clean install -xtest
+jdk:
+  - openjdk11
+env:
+  MYVAR: "custom environment variable"
